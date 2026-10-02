@@ -22,8 +22,9 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Assemble public site
         run: |
-          mkdir -p _site/assets _site/processo-seletivo _site/projeto _site/sistemas _site/missoes
+          mkdir -p _site/assets _site/inicio _site/processo-seletivo _site/projeto _site/sistemas _site/missoes
           cp index.html script.js _site/
+          cp inicio/index.html _site/inicio/
           cp processo-seletivo/index.html _site/processo-seletivo/
           cp projeto/index.html _site/projeto/
           cp sistemas/index.html _site/sistemas/

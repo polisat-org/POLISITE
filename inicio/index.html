@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b12">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-src 'none'; form-action 'self'; img-src 'self'; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self'; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="Conheça o PoliSat, grupo de extensão da Escola Politécnica da USP dedicado à tecnologia espacial, formação e extensão.">
+  <title>Início | PoliSat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/section-pages.css">
+  <style>
+    .home-routes { background: var(--white); color: var(--black); }
+    .home-routes .eyebrow { color: var(--blue); }
+    .home-routes .route-link { display: grid; grid-template-columns: 140px 1fr 24px; gap: 18px; align-items: center; padding: 20px 0; border-bottom: 1px solid rgba(9, 11, 18, .2); color: var(--black); text-decoration: none; }
+    .home-routes .route-link:first-of-type { border-top: 1px solid rgba(9, 11, 18, .2); }
+    .route-number { color: var(--blue); font: 400 11px/1.5 var(--mono); }
+    .route-name { font-size: 18px; font-weight: 600; }
+    .route-note { display: block; margin-top: 5px; color: #515466; font-size: 13px; font-weight: 400; }
+    .route-arrow { color: var(--blue); font-size: 20px; }
+    .home-routes .route-link:hover .route-name { color: var(--blue); }
+    @media (max-width: 520px) { .home-routes .route-link { grid-template-columns: 1fr 24px; gap: 6px 12px; } .route-number { grid-column: 1; } .route-copy { grid-column: 1; } .route-arrow { grid-column: 2; grid-row: 1 / span 2; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="./" aria-label="PoliSat, início"><img class="brand-logo" src="../assets/polisat-logo.svg" alt="PoliSat"></a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span></button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Navegação principal">
+        <a href="../processo-seletivo/">Processo Seletivo</a>
+        <a href="../projeto/">Projeto</a>
+        <a href="../sistemas/">Sistemas</a>
+        <a href="../missoes/">Missões</a>
+      </nav>
+      <a class="header-social" href="https://www.instagram.com/polisat.usp/" target="_blank" rel="noopener noreferrer">Instagram</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="wrap page-hero-content">
+        <p class="eyebrow">Grupo de extensão · Escola Politécnica da USP</p>
+        <h1 id="page-title">Tecnologia espacial, <span>conhecimento compartilhado.</span></h1>
+        <p class="page-lead">O PoliSat desenvolve projetos aeroespaciais, forma estudantes e aproxima a universidade da sociedade.</p>
+      </div>
+    </section>
+
+    <section class="content-section home-routes" aria-labelledby="routes-title">
+      <div class="wrap">
+        <p class="eyebrow">Explore o PoliSat</p>
+        <h2 id="routes-title">Conheça cada frente do grupo.</h2>
+        <a class="route-link" href="../processo-seletivo/">
+          <span class="route-number">01 / PARTICIPE</span>
+          <span class="route-copy"><strong class="route-name">Processo Seletivo</strong><span class="route-note">Inscrições até 18/10/2026</span></span>
+          <span class="route-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="route-link" href="../projeto/">
+          <span class="route-number">02 / GRUPO</span>
+          <span class="route-copy"><strong class="route-name">Projeto</strong><span class="route-note">Conheça o PoliSat</span></span>
+          <span class="route-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="route-link" href="../sistemas/">
+          <span class="route-number">03 / ENGENHARIA</span>
+          <span class="route-copy"><strong class="route-name">Sistemas</strong><span class="route-note">Explore os subsistemas do satélite</span></span>
+          <span class="route-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="route-link" href="../missoes/">
+          <span class="route-number">04 / TRAJETÓRIA</span>
+          <span class="route-copy"><strong class="route-name">Missões</strong><span class="route-note">Veja projetos e conquistas</span></span>
+          <span class="route-arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <a class="brand" href="./"><img class="footer-brand-logo" src="../assets/polisat-logo.svg" alt="PoliSat"></a>
+      <div class="footer-links">
+        <a href="../processo-seletivo/">Processo Seletivo</a>
+        <a href="https://www.instagram.com/polisat.usp/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.linkedin.com/company/polisat-usp/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../script.js?v=2" defer></script>
+</body>
+</html>

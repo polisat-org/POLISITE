@@ -10,7 +10,7 @@ Site estático do PoliSat, pronto para publicação no GitHub Pages. O site apre
 
 O endereço será `https://<usuario>.github.io/<repositorio>/`. Se o repositório se chamar `<usuario>.github.io`, o endereço será `https://<usuario>.github.io/`.
 
-O artefato de publicação usa uma lista explícita: a página inicial, `processo-seletivo/index.html`, `projeto/index.html`, `sistemas/index.html`, `missoes/index.html`, `script.js` e os recursos públicos de `assets/`. Materiais locais, logos, PDFs, documentação e arquivos de contexto não são enviados ao Pages.
+O artefato de publicação usa uma lista explícita: a rota padrão encaminha ao processo seletivo, `inicio/index.html`, `processo-seletivo/index.html`, `projeto/index.html`, `sistemas/index.html`, `missoes/index.html`, `script.js` e os recursos públicos de `assets/`. Materiais locais, PDFs, variações de logos, documentação e arquivos de contexto não são enviados ao Pages.
 
 ## Proteção do repositório
 
