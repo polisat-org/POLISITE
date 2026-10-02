@@ -982,9 +982,91 @@
       color: var(--white);
     }
 
+    .home-routes {
+      padding: 82px 0 96px;
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .home-routes .eyebrow {
+      color: var(--polisat-blue);
+    }
+
+    .home-routes h2 {
+      margin: 17px 0 34px;
+      font-size: 38px;
+      font-weight: 500;
+    }
+
+    .home-route-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-top: 1px solid rgba(9, 11, 18, .2);
+    }
+
+    .home-route {
+      display: grid;
+      grid-template-columns: 130px 1fr 20px;
+      gap: 14px;
+      align-items: center;
+      min-height: 96px;
+      padding: 16px 18px 16px 0;
+      border-bottom: 1px solid rgba(9, 11, 18, .2);
+      color: var(--black);
+      text-decoration: none;
+    }
+
+    .home-route:nth-child(odd) {
+      margin-right: 24px;
+    }
+
+    .home-route:nth-child(even) {
+      padding-left: 24px;
+      border-left: 1px solid rgba(9, 11, 18, .2);
+    }
+
+    .home-route-code {
+      color: var(--polisat-blue);
+      font: 400 10px/1.5 var(--mono);
+    }
+
+    .home-route strong,
+    .home-route small {
+      display: block;
+    }
+
+    .home-route strong {
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    .home-route small {
+      margin-top: 5px;
+      color: #525361;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .home-route:hover strong {
+      color: var(--polisat-blue);
+    }
+
     @media (max-width: 800px) {
       .intro {
         padding-block: 82px;
+      }
+
+      .home-route-list {
+        grid-template-columns: 1fr;
+      }
+
+      .home-route:nth-child(odd) {
+        margin-right: 0;
+      }
+
+      .home-route:nth-child(even) {
+        padding-left: 0;
+        border-left: 0;
       }
 
       .mission {
@@ -997,17 +1079,16 @@
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="#inicio" aria-label="PoliSat, início">
-        PoliSat
+        <img class="brand-logo" src="assets/polisat-logo.svg" alt="PoliSat">
       </a>
       <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-nav">
         <span></span><span></span>
       </button>
       <nav class="primary-nav" id="primary-nav" aria-label="Navegação principal">
         <a href="processo-seletivo/">Processo Seletivo</a>
-        <a href="#projeto">Projeto</a>
-        <a href="#sistemas">Sistemas</a>
-        <a href="#missoes">Missões</a>
-        <a href="#participar">Participe</a>
+        <a href="projeto/">Projeto</a>
+        <a href="sistemas/">Sistemas</a>
+        <a href="missoes/">Missões</a>
       </nav>
       <a class="header-social" href="https://www.instagram.com/polisat.usp/" target="_blank" rel="noopener noreferrer">Instagram</a>
     </div>
@@ -1028,169 +1109,43 @@
       </div>
       <div class="wrap hero-meta" aria-hidden="true">
         <span>Engenharia · Formação · Extensão</span>
-        <span>Entrega da tarefa técnica · 18/10/2026 às 23h59</span>
+        <span>Inscrições até 18/10/2026</span>
       </div>
     </section>
 
-    <section class="intro" id="projeto" aria-labelledby="intro-title">
+    <section class="home-routes" aria-labelledby="routes-title">
       <div class="wrap">
-        <div class="intro-grid">
-          <div>
-            <p class="eyebrow">Mais que satélites</p>
-            <h2 id="intro-title">Uma ponte entre a universidade e a sociedade.</h2>
-          </div>
-          <div>
-            <p class="intro-copy">O PoliSat é um grupo de extensão da Escola Politécnica da USP. Reunimos estudantes de diferentes engenharias para <strong>desenvolver tecnologias aeroespaciais, aprender em projetos reais e compartilhar conhecimento.</strong></p>
-            <p class="intro-note">Da concepção à integração: engenharia feita em equipe, com espaço para experimentar e ensinar.</p>
-          </div>
-        </div>
-        <div class="pillars">
-          <article class="pillar">
-            <span>01 / TECNOLOGIA</span>
-            <h3>Desenvolver</h3>
-            <p>Sistemas espaciais e tecnologias próprias para missões com propósito.</p>
-          </article>
-          <article class="pillar">
-            <span>02 / FORMAÇÃO</span>
-            <h3>Aprender fazendo</h3>
-            <p>Conhecimentos de engenharia aplicados a desafios concretos.</p>
-          </article>
-          <article class="pillar">
-            <span>03 / EXTENSÃO</span>
-            <h3>Compartilhar</h3>
-            <p>Divulgação científica e conexões com estudantes, universidades e sociedade.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="approach" id="sistemas" aria-labelledby="systems-title">
-      <div class="wrap">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Engenharia integrada</p>
-            <h2 id="systems-title">Seis sistemas. Uma missão.</h2>
-          </div>
-          <p>Um satélite depende de subsistemas trabalhando juntos. No PoliSat, estudantes projetam, integram e testam cada parte dessa jornada.</p>
-        </div>
-        <div class="systems">
-          <article class="system">
-            <span class="system-code">ADCS</span>
-            <h3>Orientação e controle</h3>
-            <p>Determina a atitude do satélite e controla sua orientação no espaço.</p>
-          </article>
-          <article class="system">
-            <span class="system-code">CARGA ÚTIL</span>
-            <h3>Propósito da missão</h3>
-            <p>Coleta dados e realiza a tarefa científica ou tecnológica do satélite.</p>
-          </article>
-          <article class="system">
-            <span class="system-code">EPS</span>
-            <h3>Energia elétrica</h3>
-            <p>Gerencia baterias, geração solar e distribuição de energia aos sistemas.</p>
-          </article>
-          <article class="system">
-            <span class="system-code">MECÂNICA</span>
-            <h3>Estrutura e integração</h3>
-            <p>Protege os componentes e dá forma ao satélite para tornar a missão possível.</p>
-          </article>
-          <article class="system">
-            <span class="system-code">OBC</span>
-            <h3>Computador de bordo</h3>
-            <p>Processa informações, monitora os sistemas e coordena as operações.</p>
-          </article>
-          <article class="system">
-            <span class="system-code">TT&amp;C</span>
-            <h3>Comunicação com a Terra</h3>
-            <p>Transmite telemetria e recebe comandos da estação terrestre.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="missions" id="missoes" aria-labelledby="missions-title">
-      <div class="wrap">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Missões e trajetória</p>
-            <h2 id="missions-title">Projetos que levam ideias adiante.</h2>
-          </div>
-          <p>De observação da Terra a tecnologias próprias de satélite, cada missão cria novas oportunidades de aprendizado e desenvolvimento.</p>
-        </div>
-        <div class="mission-grid">
-          <article class="mission">
-            <span class="mission-label">Projeto de desenvolvimento</span>
-            <h3>Kûara</h3>
-            <p>Desenvolvimento de um nanossatélite com tecnologias projetadas na Poli, incluindo estrutura, energia, sistema térmico e comunicação.</p>
-          </article>
-          <article class="mission">
-            <span class="mission-label">Missão CubeSat · CubeDesign 2026</span>
-            <h3>Hermes</h3>
-            <p>Explora a recepção de sinais ADS-B de aeronaves por CubeSat, com processamento e transmissão de dados da missão.</p>
-          </article>
-        </div>
-        <div class="mission-history" aria-label="Missões anteriores">
-          <strong>Missões anteriores</strong>
-          <span>Tucanae</span>
-          <span>Columba I</span>
-          <span>Columba II</span>
-          <span>Astraeus</span>
-          <span>Oceanus</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="results" aria-labelledby="results-title">
-      <div class="wrap">
-        <p class="eyebrow results-heading" id="results-title">Conquistas em competições</p>
-        <div class="results-list">
-          <div class="result">
-            <span class="result-place">1º</span>
-            <p><strong>OBSAT · Região Sudeste</strong>Olimpíada Brasileira de Satélites · 2021</p>
-          </div>
-          <div class="result">
-            <span class="result-place">2º</span>
-            <p><strong>LASC · Categoria CubeSat</strong>Latin American Space Challenge · 2022</p>
-          </div>
-          <div class="result">
-            <span class="result-place">1º</span>
-            <p><strong>LASC · Categoria CubeSat</strong>Latin American Space Challenge · 2023</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="vision" aria-labelledby="vision-title">
-      <div class="wrap">
-        <p class="eyebrow">O horizonte</p>
-        <h2 id="vision-title">Um satélite funcional brasileiro, projetado por estudantes.</h2>
-        <p class="vision-note">Essa é a visão de longo prazo apresentada pelo PoliSat à PoliUSP. Um objetivo que impulsiona o desenvolvimento de tecnologias próprias e a formação de novas gerações de engenheiros.</p>
-        <a class="text-link" href="https://www.poli.usp.br/noticias/oportunidades/oportunidades-graduacao/estao-abertas-as-inscricoes-para-o-polisat-grupo-de-desenvolvimento-de-satelites-da-poli/" target="_blank" rel="noopener noreferrer">Leia a matéria da PoliUSP</a>
-      </div>
-    </section>
-
-    <section class="join" id="participar" aria-labelledby="join-title">
-      <div class="wrap join-grid">
-        <div>
-          <p class="eyebrow">Acompanhe e conecte-se</p>
-          <h2 id="join-title">O espaço também se constrói aqui.</h2>
-          <p class="join-copy">Acompanhe o grupo para saber de projetos, eventos e oportunidades. Para conhecer formas de participação ou parceria, fale com o PoliSat pelos canais oficiais.</p>
-        </div>
-        <div class="join-actions">
-          <a class="button" href="https://forms.gle/6Zgmez5A3fWMGkd66" target="_blank" rel="noopener noreferrer">Inscreva-se no processo seletivo</a>
-          <a class="text-link" href="processo-seletivo/">Informações do processo seletivo</a>
-          <a class="text-link" href="https://chat.whatsapp.com/KmwLIhpVEDE3cBGOi7htAG" target="_blank" rel="noopener noreferrer">Grupo do WhatsApp</a>
-          <a class="text-link" href="https://linktr.ee/polisat?utm_source=linktree_profile_share&amp;ltsid=54a8769d-b27a-4bfd-979c-7fe950222c0d" target="_blank" rel="noopener noreferrer">Linktree · canais e contato</a>
-          <a class="text-link" href="https://www.instagram.com/polisat.usp/" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a class="text-link" href="https://www.linkedin.com/company/polisat-usp/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        </div>
+        <p class="eyebrow">Explore o PoliSat</p>
+        <h2 id="routes-title">Engenharia espacial em várias frentes.</h2>
+        <nav class="home-route-list" aria-label="Conheça as áreas do PoliSat">
+          <a class="home-route" href="processo-seletivo/">
+            <span class="home-route-code">01 / PARTICIPE</span>
+            <span><strong>Processo Seletivo</strong><small>Inscrições até 18/10/2026</small></span>
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a class="home-route" href="projeto/">
+            <span class="home-route-code">02 / GRUPO</span>
+            <span><strong>Projeto</strong><small>Conheça o PoliSat e sua missão</small></span>
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a class="home-route" href="sistemas/">
+            <span class="home-route-code">03 / ENGENHARIA</span>
+            <span><strong>Sistemas</strong><small>Explore os subsistemas do satélite</small></span>
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a class="home-route" href="missoes/">
+            <span class="home-route-code">04 / TRAJETÓRIA</span>
+            <span><strong>Missões</strong><small>Veja projetos e conquistas</small></span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </nav>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <span class="footer-brand-name">PoliSat · Escola Politécnica da USP</span>
+      <img class="footer-brand-logo" src="assets/polisat-logo.svg" alt="PoliSat · Escola Politécnica da USP">
       <div class="footer-links">
         <a href="processo-seletivo/">Processo Seletivo</a>
         <a href="https://forms.gle/6Zgmez5A3fWMGkd66" target="_blank" rel="noopener noreferrer">Inscrição</a>
@@ -1203,6 +1158,6 @@
     </div>
   </footer>
 
-  <script src="script.js" defer></script>
+  <script src="script.js?v=2" defer></script>
 </body>
 </html>

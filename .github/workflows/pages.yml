@@ -22,10 +22,13 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Assemble public site
         run: |
-          mkdir -p _site/assets _site/processo-seletivo
+          mkdir -p _site/assets _site/processo-seletivo _site/projeto _site/sistemas _site/missoes
           cp index.html script.js _site/
           cp processo-seletivo/index.html _site/processo-seletivo/
-          cp assets/earth-orbit.jpg _site/assets/
+          cp projeto/index.html _site/projeto/
+          cp sistemas/index.html _site/sistemas/
+          cp missoes/index.html _site/missoes/
+          cp assets/earth-orbit.jpg assets/polisat-logo.svg assets/section-pages.css _site/assets/
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
