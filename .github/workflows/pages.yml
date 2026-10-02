@@ -22,8 +22,9 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Assemble public site
         run: |
-          mkdir -p _site/assets
+          mkdir -p _site/assets _site/processo-seletivo
           cp index.html script.js _site/
+          cp processo-seletivo/index.html _site/processo-seletivo/
           cp assets/earth-orbit.jpg _site/assets/
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

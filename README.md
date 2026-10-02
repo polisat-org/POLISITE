@@ -10,7 +10,7 @@ Site estático do PoliSat, pronto para publicação no GitHub Pages. O site apre
 
 O endereço será `https://<usuario>.github.io/<repositorio>/`. Se o repositório se chamar `<usuario>.github.io`, o endereço será `https://<usuario>.github.io/`.
 
-O artefato de publicação usa uma lista explícita: `index.html`, `script.js` e `assets/earth-orbit.jpg`. Materiais locais, logos, documentação e arquivos de contexto não são enviados ao Pages.
+O artefato de publicação usa uma lista explícita: `index.html`, `processo-seletivo/index.html`, `script.js` e `assets/earth-orbit.jpg`. Materiais locais, logos, documentação e arquivos de contexto não são enviados ao Pages.
 
 ## Proteção do repositório
 
