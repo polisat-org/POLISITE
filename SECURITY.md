@@ -1,6 +1,6 @@
 # Segurança
 
-Este projeto publica apenas um site estático no GitHub Pages. Não envie senhas, tokens, dados pessoais ou informações internas para o site ou para o repositório público. O arquivo `CONTEXTO.txt` é local e deve permanecer ignorado pelo Git.
+Este projeto publica apenas um site estático no GitHub Pages. Não envie senhas, tokens, dados pessoais ou informações internas para o site ou para o repositório público. Materiais internos devem permanecer fora do Git e da publicação.
 
 Para relatar uma vulnerabilidade, use a opção **Report a vulnerability** na aba **Security** do repositório no GitHub, quando disponível. Não publique detalhes exploráveis em uma issue pública.
 

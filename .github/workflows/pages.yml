@@ -24,7 +24,7 @@ jobs:
         run: |
           mkdir -p _site/assets
           cp index.html script.js _site/
-          cp assets/earth-orbit.jpg assets/polisat-logo.svg _site/assets/
+          cp assets/earth-orbit.jpg _site/assets/
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
