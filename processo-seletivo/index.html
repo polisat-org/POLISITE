@@ -81,6 +81,16 @@
     .step p { margin: 0; color: #515466; font-size: 14px; line-height: 1.7; }
     .text-link { display: inline-flex; align-items: center; margin-top: 12px; color: var(--blue); font-size: 13px; font-weight: 600; text-underline-offset: 4px; }
     .task-note { margin-top: 24px; padding: 18px 20px; border-left: 3px solid var(--blue); background: rgba(19, 64, 143, .08); color: #303140; font-size: 13px; line-height: 1.7; }
+    .schedule-grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 72px; align-items: start; }
+    .schedule-visual { max-width: 420px; margin: 0; }
+    .schedule-image { display: block; width: 100%; height: auto; }
+    .schedule-caption { margin: 12px 0 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
+    .schedule-section .section-lead { color: var(--muted); }
+    .schedule-list { margin: 24px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+    .schedule-item { display: grid; grid-template-columns: 100px 1fr; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+    .schedule-date { color: var(--blue-light); font: 400 12px/1.6 var(--mono); }
+    .schedule-item h3 { margin: 0 0 6px; font-size: 17px; font-weight: 500; }
+    .schedule-item p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
     .section-dark .eyebrow { color: var(--blue-light); }
     .section-dark h2 { max-width: 420px; }
     .areas { border-top: 1px solid var(--line); }
@@ -115,6 +125,8 @@
       .hero-copy { grid-template-columns: minmax(0, 1fr) 210px; gap: 24px; }
       h1 { font-size: 54px; }
       .section-grid, .contact-grid { grid-template-columns: 1fr; gap: 30px; }
+      .schedule-grid { grid-template-columns: 1fr; gap: 30px; }
+      .schedule-visual { max-width: 360px; }
       .section { padding: 66px 0; }
       h2 { font-size: 35px; }
     }
@@ -219,6 +231,54 @@
             </li>
           </ol>
           <p class="task-note">As inscrições para o Processo Seletivo 2026.2 encerram em 18/10/2026. Acompanhe o grupo oficial para receber os próximos comunicados.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark schedule-section" aria-labelledby="schedule-title">
+      <div class="wrap">
+        <div class="schedule-grid">
+          <figure class="schedule-visual">
+            <a href="../assets/cronograma-processo-seletivo-2026-2.png" target="_blank" rel="noopener noreferrer">
+              <img class="schedule-image" src="../assets/cronograma-processo-seletivo-2026-2.png" alt="Cronograma do Processo Seletivo PoliSat 2026.2: início em 28 de setembro, entrega da tarefa técnica até 18 de outubro, últimas entrevistas em 23 de outubro e resultados em 25 de outubro.">
+            </a>
+            <figcaption class="schedule-caption">Abra a imagem para ver o cronograma em tamanho original.</figcaption>
+          </figure>
+          <div>
+            <p class="eyebrow">Processo Seletivo 2026.2</p>
+            <h2 id="schedule-title">Cronograma</h2>
+            <p class="section-lead">Confira as datas das etapas e acompanhe o grupo oficial para receber atualizações.</p>
+            <ol class="schedule-list">
+              <li class="schedule-item">
+                <time class="schedule-date" datetime="2026-09-28">28/09/2026</time>
+                <div>
+                  <h3>Início do processo seletivo</h3>
+                  <p>Liberação da tarefa técnica.</p>
+                </div>
+              </li>
+              <li class="schedule-item">
+                <time class="schedule-date" datetime="2026-10-18">18/10/2026</time>
+                <div>
+                  <h3>Entrega da tarefa técnica</h3>
+                  <p>Prazo limite para envio da tarefa.</p>
+                </div>
+              </li>
+              <li class="schedule-item">
+                <time class="schedule-date" datetime="2026-10-23">23/10/2026</time>
+                <div>
+                  <h3>Últimas entrevistas</h3>
+                  <p>As entrevistas podem acontecer assim que a pessoa candidata entregar a tarefa técnica, para adiantar o processo.</p>
+                </div>
+              </li>
+              <li class="schedule-item">
+                <time class="schedule-date" datetime="2026-10-25">25/10/2026</time>
+                <div>
+                  <h3>Resultados</h3>
+                  <p>Os resultados podem ser divulgados antes dessa data para cada pessoa candidata.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
         </div>
       </div>
     </section>
