@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/section-pages.css">
+  <link rel="stylesheet" href="../assets/section-pages.css?v=2">
 </head>
 <body>
   <header class="site-header">
@@ -24,6 +24,7 @@
         <a href="../projeto/">Projeto</a>
         <a href="../sistemas/">Sistemas</a>
         <a href="./" aria-current="page">Missões</a>
+        <a href="../patrocinadores/">Patrocinadores</a>
       </nav>
       <a class="header-social" href="https://www.instagram.com/polisat.usp/" target="_blank" rel="noopener noreferrer">Instagram</a>
     </div>
@@ -90,8 +91,15 @@
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <a class="brand" href="../inicio/"><img class="footer-brand-logo" src="../assets/polisat-logo.svg" alt="PoliSat"></a>
+      <div class="footer-brands">
+        <a class="brand" href="../inicio/"><img class="footer-brand-logo" src="../assets/polisat-logo.svg" alt="PoliSat"></a>
+        <div class="footer-institutions" aria-label="Instituições">
+          <a href="https://www.poli.usp.br/" target="_blank" rel="noopener noreferrer"><img src="../assets/logo-poli.png" alt="Escola Politécnica da USP" width="220" height="219" loading="lazy"></a>
+          <a href="https://www.usp.br/" target="_blank" rel="noopener noreferrer"><img class="logo-usp" src="../assets/logo-usp.png" alt="Universidade de São Paulo" width="200" height="81" loading="lazy"></a>
+        </div>
+      </div>
       <div class="footer-links">
+        <a href="../patrocinadores/">Patrocinadores</a>
         <a href="../inicio/">Início</a>
         <a href="../inicio/#cubedesign">CubeDesign</a>
         <a href="../projeto/">Projeto</a>
@@ -99,6 +107,6 @@
       </div>
     </div>
   </footer>
-  <script src="../script.js?v=3" defer></script>
+  <script src="../script.js?v=4" defer></script>
 </body>
 </html>

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b12">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-src 'none'; form-action 'self'; img-src 'self'; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self'; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="Agradecimento do PoliSat às empresas e instituições que apoiam a equipe e a Missão Hermes.">
+  <title>Patrocinadores | PoliSat</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/polisat-favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/section-pages.css?v=2">
+  <style>
+    .thanks-hero .page-hero-content { max-width: 860px; }
+    .sponsor-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 38px; padding: 0; list-style: none; }
+    .sponsor { display: grid; grid-template-rows: 1fr auto; min-height: 190px; border: 1px solid rgba(9, 11, 18, .14); background: #fff; }
+    .sponsor-logo { display: grid; place-items: center; padding: 26px 22px 14px; }
+    .sponsor-logo img { display: block; width: auto; max-width: 100%; height: auto; max-height: 72px; }
+    .sponsor-logo img.square { max-height: 104px; }
+    .sponsor-name { padding: 10px 16px 12px; border-top: 1px solid rgba(9, 11, 18, .1); color: #515466; font: 400 11px/1.5 var(--mono); text-transform: uppercase; letter-spacing: .04em; }
+    .sponsor.on-dark { border-color: transparent; background: var(--navy); }
+    .sponsor.on-dark .sponsor-name { border-color: var(--line); color: var(--muted); }
+    .support-list { display: grid; grid-template-columns: repeat(3, 1fr); margin: 30px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+    .support { padding: 20px 20px 20px 0; }
+    .support + .support { padding-left: 20px; border-left: 1px solid var(--line); }
+    .support span { color: var(--blue-light); font: 400 11px/1.5 var(--mono); text-transform: uppercase; }
+    .support strong { display: block; margin-top: 10px; font-size: 18px; font-weight: 500; }
+    .thanks-note { display: grid; grid-template-columns: 200px 1fr; gap: 40px; align-items: center; }
+    .thanks-note img { display: block; width: 100%; height: auto; }
+    .button { display: inline-flex; min-height: 48px; align-items: center; gap: 12px; margin-top: 24px; padding: 0 18px; border: 1px solid var(--blue); background: var(--blue); color: var(--white); font-size: 14px; font-weight: 600; text-decoration: none; transition: background 160ms ease, color 160ms ease, border-color 160ms ease; }
+    .button::after { content: "↗"; }
+    .button:hover { border-color: var(--navy); background: var(--navy); }
+    @media (max-width: 900px) { .sponsor-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 800px) {
+      .support-list { grid-template-columns: 1fr; }
+      .support + .support { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }
+      .thanks-note { grid-template-columns: 1fr; gap: 24px; }
+      .thanks-note img { width: 160px; }
+    }
+    @media (max-width: 420px) { .sponsor { min-height: 150px; } .sponsor-logo { padding: 18px 14px 10px; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../inicio/" aria-label="PoliSat, início"><img class="brand-logo" src="../assets/polisat-logo.svg" alt="PoliSat"></a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span></button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Navegação principal">
+        <a href="../inicio/#cubedesign">CubeDesign</a>
+        <a href="../projeto/">Projeto</a>
+        <a href="../sistemas/">Sistemas</a>
+        <a href="../missoes/">Missões</a>
+        <a href="./" aria-current="page">Patrocinadores</a>
+      </nav>
+      <a class="header-social" href="https://www.instagram.com/polisat.usp/" target="_blank" rel="noopener noreferrer">Instagram</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero thanks-hero" aria-labelledby="page-title">
+      <div class="wrap page-hero-content">
+        <p class="eyebrow">Patrocinadores e apoiadores</p>
+        <h1 id="page-title">Obrigado por levarem <span>o PoliSat mais longe.</span></h1>
+        <p class="page-lead">Nenhum satélite sai do papel sozinho. A Missão Hermes e a nossa ida à CubeDesign 2026, na Argentina, só são possíveis graças às empresas e instituições que acreditam na equipe.</p>
+      </div>
+    </section>
+
+    <section class="content-section section-light" aria-labelledby="sponsors-title">
+      <div class="wrap">
+        <div class="section-grid">
+          <div>
+            <p class="eyebrow">Patrocinadores</p>
+            <h2 id="sponsors-title">Quem está com a gente nessa missão.</h2>
+          </div>
+          <p class="section-copy">Com ferramentas, componentes, recursos e confiança, nossos patrocinadores ajudam estudantes da Poli a projetar, construir e testar tecnologia espacial de verdade. Muito obrigado!</p>
+        </div>
+        <ul class="sponsor-grid">
+          <li class="sponsor"><div class="sponsor-logo"><img src="../assets/patrocinadores/ansys.svg" alt="Ansys" loading="lazy"></div><span class="sponsor-name">Ansys</span></li>
+          <li class="sponsor"><div class="sponsor-logo"><img class="square" src="../assets/patrocinadores/st.svg" alt="STMicroelectronics" loading="lazy"></div><span class="sponsor-name">STMicroelectronics</span></li>
+          <li class="sponsor"><div class="sponsor-logo"><img class="square" src="../assets/patrocinadores/solidworks.svg" alt="SolidWorks" loading="lazy"></div><span class="sponsor-name">SolidWorks</span></li>
+          <li class="sponsor"><div class="sponsor-logo"><img src="../assets/patrocinadores/fdte.svg" alt="FDTE" loading="lazy"></div><span class="sponsor-name">FDTE</span></li>
+          <li class="sponsor on-dark"><div class="sponsor-logo"><img class="square" src="../assets/patrocinadores/adp.svg" alt="Amigos da Poli" loading="lazy"></div><span class="sponsor-name">Amigos da Poli</span></li>
+          <li class="sponsor on-dark"><div class="sponsor-logo"><img src="../assets/patrocinadores/citi.svg" alt="CITI" loading="lazy"></div><span class="sponsor-name">CITI</span></li>
+          <li class="sponsor on-dark"><div class="sponsor-logo"><img src="../assets/patrocinadores/griffus.svg" alt="Griffus" loading="lazy"></div><span class="sponsor-name">Griffus</span></li>
+          <li class="sponsor on-dark"><div class="sponsor-logo"><img src="../assets/patrocinadores/indusmart.svg" alt="Indusmart" loading="lazy"></div><span class="sponsor-name">Indusmart</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="content-section section-dark" aria-labelledby="support-title">
+      <div class="wrap">
+        <p class="eyebrow">Apoio institucional</p>
+        <h2 id="support-title">Nossa casa.</h2>
+        <ul class="support-list">
+          <li class="support"><span>Universidade</span><strong>Universidade de São Paulo</strong></li>
+          <li class="support"><span>Escola</span><strong>Escola Politécnica da USP</strong></li>
+          <li class="support"><span>Departamento</span><strong>PME · Engenharia Mecânica</strong></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="content-section section-light" aria-labelledby="join-title">
+      <div class="wrap thanks-note">
+        <img src="../assets/hermes-mission-patch.webp" alt="Patch da Missão Hermes 2026 do PoliSat" width="720" height="630" loading="lazy">
+        <div>
+          <p class="eyebrow">Seja parte da próxima missão</p>
+          <h2 id="join-title">Quer apoiar o PoliSat?</h2>
+          <p class="section-copy">Estamos sempre abertos a novas parcerias. Fale com a gente pelas redes sociais para saber como sua empresa pode apoiar a formação de engenheiros e engenheiras espaciais.</p>
+          <a class="button" href="https://www.linkedin.com/company/polisat-usp/" target="_blank" rel="noopener noreferrer">Fale conosco no LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brands">
+        <a class="brand" href="../inicio/"><img class="footer-brand-logo" src="../assets/polisat-logo.svg" alt="PoliSat"></a>
+        <div class="footer-institutions" aria-label="Instituições">
+          <a href="https://www.poli.usp.br/" target="_blank" rel="noopener noreferrer"><img src="../assets/logo-poli.png" alt="Escola Politécnica da USP" width="220" height="219" loading="lazy"></a>
+          <a href="https://www.usp.br/" target="_blank" rel="noopener noreferrer"><img class="logo-usp" src="../assets/logo-usp.png" alt="Universidade de São Paulo" width="200" height="81" loading="lazy"></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="../inicio/">Início</a>
+        <a href="../inicio/#cubedesign">CubeDesign</a>
+        <a href="https://www.instagram.com/polisat.usp/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.linkedin.com/company/polisat-usp/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../script.js?v=4" defer></script>
+</body>
+</html>

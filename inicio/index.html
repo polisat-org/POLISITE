@@ -12,10 +12,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/section-pages.css">
+  <link rel="stylesheet" href="../assets/section-pages.css?v=2">
   <style>
     .cd-hero { min-height: 560px; }
-    .cd-hero .page-hero-content { max-width: 900px; }
+    .cd-hero .page-hero-content { max-width: none; }
+    .cd-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, 340px); gap: 48px; align-items: center; }
+    .hero-patch { margin: 0; text-align: center; }
+    .hero-patch img { display: block; width: 100%; height: auto; filter: drop-shadow(0 18px 40px rgba(0, 0, 0, .55)); }
+    .hero-patch figcaption { margin-top: 12px; color: var(--blue-light); font: 400 11px/1.5 var(--mono); text-transform: uppercase; letter-spacing: .08em; }
+    .mission-patch-figure { display: grid; place-items: center; padding: 24px; background: radial-gradient(circle at 50% 45%, rgba(19, 64, 143, .45), var(--black) 70%); }
+    .mission-patch-figure img { display: block; width: 78%; height: auto; }
     .countdown { display: grid; grid-template-columns: repeat(4, minmax(0, 120px)); gap: 12px; margin-top: 34px; }
     .countdown-unit { display: grid; gap: 8px; padding: 16px 14px 14px; border: 1px solid var(--line); background: rgba(9, 11, 18, .55); }
     .countdown-unit strong { color: var(--white); font: 500 40px/1 var(--mono); font-variant-numeric: tabular-nums; }
@@ -53,6 +59,8 @@
     .home-routes .route-link:hover .route-name { color: var(--blue); }
 
     @media (max-width: 800px) {
+      .cd-hero-grid { grid-template-columns: 1fr; gap: 28px; }
+      .hero-patch { order: -1; width: min(220px, 60%); }
       .countdown { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
       .countdown-unit { padding: 12px 10px; }
       .countdown-unit strong { font-size: 30px; }
@@ -81,6 +89,7 @@
         <a href="../projeto/">Projeto</a>
         <a href="../sistemas/">Sistemas</a>
         <a href="../missoes/">Missões</a>
+        <a href="../patrocinadores/">Patrocinadores</a>
       </nav>
       <a class="header-social" href="https://www.instagram.com/polisat.usp/" target="_blank" rel="noopener noreferrer">Instagram</a>
     </div>
@@ -88,10 +97,11 @@
 
   <main>
     <section class="page-hero cd-hero" aria-labelledby="page-title">
-      <div class="wrap page-hero-content">
+      <div class="wrap page-hero-content cd-hero-grid">
+        <div>
         <p class="eyebrow">Rumo à CubeDesign 2026 · Buenos Aires, Argentina</p>
         <h1 id="page-title">Nosso satélite <span>vai para a Argentina.</span></h1>
-        <p class="page-lead">O PoliSat, equipe de satélites da Poli-USP, vai competir na CubeDesign 2026, a competição latino-americana de pequenos satélites.</p>
+        <p class="page-lead">O PoliSat, equipe de satélites da Poli-USP, vai competir na CubeDesign 2026 com a Missão Hermes, um CubeSat que recebe sinais ADS-B de aeronaves.</p>
         <div class="countdown" data-countdown data-deadline="2026-11-24T00:00:00-03:00" data-ended-text="A competição começou! Torça pelo PoliSat." role="timer" aria-live="off" aria-label="Tempo restante até a CubeDesign 2026">
           <div class="countdown-unit"><strong data-countdown-days>--</strong><span>dias</span></div>
           <div class="countdown-unit"><strong data-countdown-hours>--</strong><span>horas</span></div>
@@ -103,6 +113,11 @@
           <a class="button" href="https://cubedesign.unsam.edu.ar/" target="_blank" rel="noopener noreferrer">Site da CubeDesign</a>
           <a class="button button-secondary" href="https://www.instagram.com/polisat.usp/" target="_blank" rel="noopener noreferrer">Acompanhe no Instagram</a>
         </div>
+        </div>
+        <figure class="hero-patch">
+          <img src="../assets/hermes-mission-patch.webp" alt="Patch da Missão Hermes 2026 do PoliSat: Hermes correndo sobre a Terra, um CubeSat e aviões" width="720" height="630">
+          <figcaption>Missão Hermes · PoliSat 2026</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -208,38 +223,8 @@
             <figcaption>São Paulo → Buenos Aires</figcaption>
           </figure>
           <figure>
-            <svg class="gallery-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-labelledby="patch-t">
-  <title id="patch-t">Patch da missão PoliSat na CubeDesign 2026</title>
-  <defs>
-    <path id="patch-top" d="M140 180 A100 100 0 0 1 340 180"/>
-    <path id="patch-bottom" d="M128 180 A112 112 0 0 0 352 180"/>
-  </defs>
-  <rect width="480" height="360" fill="#f3f4f8"/>
-  <circle cx="240" cy="180" r="138" fill="#090b12"/>
-  <circle cx="240" cy="180" r="130" fill="none" stroke="#a8c6f5" stroke-width="2"/>
-  <circle cx="240" cy="180" r="84" fill="#13408f"/>
-  <path d="M156 200 Q240 150 324 200" fill="none" stroke="#a8c6f5" stroke-width="1.5" stroke-dasharray="3 5"/>
-  <g fill="#f3f4f8">
-    <circle cx="198" cy="132" r="1.4"/><circle cx="286" cy="128" r="1.2"/><circle cx="300" cy="226" r="1.1"/><circle cx="182" cy="230" r="1.1"/>
-  </g>
-  <g transform="translate(240 176) scale(.62)">
-    <polygon points="-38,-26 0,-46 38,-26 0,-6" fill="#a8c6f5"/>
-    <polygon points="-38,-26 0,-6 0,46 -38,26" fill="#f3f4f8"/>
-    <polygon points="38,-26 0,-6 0,46 38,26" fill="#a8c6f5" fill-opacity=".7"/>
-    <rect x="-112" y="-14" width="62" height="30" fill="#a8c6f5" fill-opacity=".85"/>
-    <rect x="50" y="-14" width="62" height="30" fill="#a8c6f5" fill-opacity=".85"/>
-  </g>
-  <g fill="#f3f4f8" font-family="DM Mono, monospace" font-size="15" letter-spacing="4" text-anchor="middle">
-    <text><textPath href="#patch-top" startOffset="50%">POLISAT · POLI-USP</textPath></text>
-  </g>
-  <g fill="#a8c6f5" font-family="DM Mono, monospace" font-size="13" letter-spacing="3" text-anchor="middle">
-    <text dy="10"><textPath href="#patch-bottom" startOffset="50%">CUBEDESIGN 2026 · ARGENTINA</textPath></text>
-  </g>
-  <g fill="#a8c6f5">
-    <polygon points="240,40 243,48 251,48 245,53 247,61 240,56 233,61 235,53 229,48 237,48"/>
-  </g>
-</svg>
-            <figcaption>Patch da missão CubeDesign 2026</figcaption>
+            <div class="gallery-art mission-patch-figure"><img src="../assets/hermes-mission-patch.webp" alt="Patch da Missão Hermes 2026 do PoliSat" width="720" height="630" loading="lazy"></div>
+            <figcaption>Patch oficial da Missão Hermes</figcaption>
           </figure>
         </div>
       </div>
@@ -264,20 +249,32 @@
           <span class="route-copy"><strong class="route-name">Missões</strong><span class="route-note">Veja projetos e conquistas</span></span>
           <span class="route-arrow" aria-hidden="true">↗</span>
         </a>
+        <a class="route-link" href="../patrocinadores/">
+          <span class="route-number">04 / OBRIGADO</span>
+          <span class="route-copy"><strong class="route-name">Patrocinadores</strong><span class="route-note">Quem torna a Missão Hermes possível</span></span>
+          <span class="route-arrow" aria-hidden="true">↗</span>
+        </a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <a class="brand" href="./"><img class="footer-brand-logo" src="../assets/polisat-logo.svg" alt="PoliSat"></a>
+      <div class="footer-brands">
+        <a class="brand" href="./"><img class="footer-brand-logo" src="../assets/polisat-logo.svg" alt="PoliSat"></a>
+        <div class="footer-institutions" aria-label="Instituições">
+          <a href="https://www.poli.usp.br/" target="_blank" rel="noopener noreferrer"><img src="../assets/logo-poli.png" alt="Escola Politécnica da USP" width="220" height="219" loading="lazy"></a>
+          <a href="https://www.usp.br/" target="_blank" rel="noopener noreferrer"><img class="logo-usp" src="../assets/logo-usp.png" alt="Universidade de São Paulo" width="200" height="81" loading="lazy"></a>
+        </div>
+      </div>
       <div class="footer-links">
+        <a href="../patrocinadores/">Patrocinadores</a>
         <a href="#cubedesign">CubeDesign 2026</a>
         <a href="https://www.instagram.com/polisat.usp/" target="_blank" rel="noopener noreferrer">Instagram</a>
         <a href="https://www.linkedin.com/company/polisat-usp/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </div>
     </div>
   </footer>
-  <script src="../script.js?v=3" defer></script>
+  <script src="../script.js?v=4" defer></script>
 </body>
 </html>

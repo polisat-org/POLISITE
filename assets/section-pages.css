@@ -72,6 +72,12 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--blue-light); ou
 .site-footer { border-top: 1px solid var(--line); background: var(--black); }
 .footer-inner { display: flex; min-height: 92px; align-items: center; justify-content: space-between; gap: 24px; color: var(--muted); font: 400 11px/1.6 var(--mono); }
 .footer-brand-logo { display: block; width: 74px; height: auto; }
+.footer-brands { display: flex; align-items: center; gap: 28px; }
+.footer-institutions { display: flex; align-items: center; gap: 18px; padding-left: 28px; border-left: 1px solid var(--line); }
+.footer-institutions a { display: block; opacity: .6; transition: opacity 160ms ease; }
+.footer-institutions a:hover { opacity: 1; }
+.footer-institutions img { display: block; width: auto; height: 38px; }
+.footer-institutions .logo-usp { height: 20px; }
 .footer-links { display: flex; flex-wrap: wrap; gap: 18px; }
 .footer-links a { color: var(--white); text-decoration: none; }
 .footer-links a:hover { color: var(--blue-light); }
@@ -101,6 +107,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--blue-light); ou
   .mission-list { grid-template-columns: 1fr; }
   .system-row { grid-template-columns: 1fr; gap: 8px; }
   .system-row p { grid-column: auto; }
+  .footer-brands { gap: 20px; }
+  .footer-institutions { padding-left: 20px; }
   .footer-inner { min-height: 120px; align-items: flex-start; flex-direction: column; justify-content: center; gap: 12px; padding-block: 20px; }
 }
 @media (prefers-reduced-motion: reduce) {
