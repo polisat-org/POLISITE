@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#090b12">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-src 'none'; form-action 'self'; img-src 'self'; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self'; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="description" content="Conheça o PoliSat, grupo de extensão da Escola Politécnica da USP dedicado à tecnologia espacial, formação e extensão.">
+  <meta name="description" content="O PoliSat, equipe de satélites da Escola Politécnica da USP, vai à CubeDesign 2026 na Argentina. Acompanhe a contagem regressiva.">
   <title>Início | PoliSat</title>
   <link rel="icon" type="image/svg+xml" href="../assets/polisat-favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,16 +14,61 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/section-pages.css">
   <style>
+    .cd-hero { min-height: 560px; }
+    .cd-hero .page-hero-content { max-width: 900px; }
+    .countdown { display: grid; grid-template-columns: repeat(4, minmax(0, 120px)); gap: 12px; margin-top: 34px; }
+    .countdown-unit { display: grid; gap: 8px; padding: 16px 14px 14px; border: 1px solid var(--line); background: rgba(9, 11, 18, .55); }
+    .countdown-unit strong { color: var(--white); font: 500 40px/1 var(--mono); font-variant-numeric: tabular-nums; }
+    .countdown-unit span { color: var(--blue-light); font: 400 10px/1.3 var(--mono); text-transform: uppercase; letter-spacing: .08em; }
+    .countdown-note { margin: 14px 0 0; color: #c1c6d4; font: 400 12px/1.6 var(--mono); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .button { display: inline-flex; min-height: 48px; align-items: center; gap: 12px; padding: 0 18px; border: 1px solid var(--blue); background: var(--blue); color: var(--white); font-size: 14px; font-weight: 600; text-decoration: none; transition: background 160ms ease, color 160ms ease, border-color 160ms ease; }
+    .button::after { content: "↗"; }
+    .button:hover { border-color: var(--blue-light); background: var(--blue-light); color: var(--black); }
+    .button-secondary { border-color: rgba(243, 244, 248, .5); background: transparent; }
+    .button-secondary:hover { border-color: var(--white); background: var(--white); }
+
+    .cd-facts { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 40px; border-top: 1px solid rgba(9, 11, 18, .2); }
+    .cd-fact { padding: 20px 20px 20px 0; }
+    .cd-fact + .cd-fact { padding-left: 20px; border-left: 1px solid rgba(9, 11, 18, .2); }
+    .cd-fact span { color: var(--blue); font: 400 11px/1.5 var(--mono); text-transform: uppercase; }
+    .cd-fact strong { display: block; margin-top: 10px; font-size: 20px; font-weight: 600; }
+    .cd-fact p { margin: 6px 0 0; color: #515466; font-size: 13px; line-height: 1.6; }
+
+    .gallery { display: grid; grid-template-columns: 1.4fr 1fr; grid-template-rows: auto auto; gap: 16px; margin-top: 40px; }
+    .gallery figure { margin: 0; border: 1px solid var(--line); background: var(--black); }
+    .gallery figure:first-child { grid-row: span 2; }
+    .gallery-art { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
+    .gallery figure:first-child .gallery-art { aspect-ratio: auto; }
+    .gallery figcaption { padding: 12px 14px; border-top: 1px solid var(--line); color: var(--muted); font: 400 11px/1.5 var(--mono); text-transform: uppercase; }
+
     .home-routes { background: var(--white); color: var(--black); }
     .home-routes .eyebrow { color: var(--blue); }
     .home-routes .route-link { display: grid; grid-template-columns: 140px 1fr 24px; gap: 18px; align-items: center; padding: 20px 0; border-bottom: 1px solid rgba(9, 11, 18, .2); color: var(--black); text-decoration: none; }
-    .home-routes .route-link:first-of-type { border-top: 1px solid rgba(9, 11, 18, .2); }
+    .home-routes .route-link:first-of-type { margin-top: 30px; border-top: 1px solid rgba(9, 11, 18, .2); }
     .route-number { color: var(--blue); font: 400 11px/1.5 var(--mono); }
     .route-name { font-size: 18px; font-weight: 600; }
     .route-note { display: block; margin-top: 5px; color: #515466; font-size: 13px; font-weight: 400; }
     .route-arrow { color: var(--blue); font-size: 20px; }
     .home-routes .route-link:hover .route-name { color: var(--blue); }
-    @media (max-width: 520px) { .home-routes .route-link { grid-template-columns: 1fr 24px; gap: 6px 12px; } .route-number { grid-column: 1; } .route-copy { grid-column: 1; } .route-arrow { grid-column: 2; grid-row: 1 / span 2; } }
+
+    @media (max-width: 800px) {
+      .countdown { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+      .countdown-unit { padding: 12px 10px; }
+      .countdown-unit strong { font-size: 30px; }
+      .cd-facts { grid-template-columns: 1fr; }
+      .cd-fact + .cd-fact { padding-left: 0; border-left: 0; border-top: 1px solid rgba(9, 11, 18, .2); }
+      .gallery { grid-template-columns: 1fr; }
+      .gallery figure:first-child { grid-row: auto; }
+      .gallery figure:first-child .gallery-art { aspect-ratio: 4 / 3; }
+    }
+    @media (max-width: 520px) {
+      .countdown-unit strong { font-size: 24px; }
+      .countdown-unit span { font-size: 9px; }
+      .home-routes .route-link { grid-template-columns: 1fr 24px; gap: 6px 12px; }
+      .route-number, .route-copy { grid-column: 1; }
+      .route-arrow { grid-column: 2; grid-row: 1 / span 2; }
+    }
   </style>
 </head>
 <body>
@@ -32,7 +77,7 @@
       <a class="brand" href="./" aria-label="PoliSat, início"><img class="brand-logo" src="../assets/polisat-logo.svg" alt="PoliSat"></a>
       <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span></button>
       <nav class="primary-nav" id="primary-nav" aria-label="Navegação principal">
-        <a href="../processo-seletivo/">Processo Seletivo</a>
+        <a href="#cubedesign">CubeDesign</a>
         <a href="../projeto/">Projeto</a>
         <a href="../sistemas/">Sistemas</a>
         <a href="../missoes/">Missões</a>
@@ -42,11 +87,161 @@
   </header>
 
   <main>
-    <section class="page-hero" aria-labelledby="page-title">
+    <section class="page-hero cd-hero" aria-labelledby="page-title">
       <div class="wrap page-hero-content">
-        <p class="eyebrow">Grupo de extensão · Escola Politécnica da USP</p>
-        <h1 id="page-title">Tecnologia espacial, <span>conhecimento compartilhado.</span></h1>
-        <p class="page-lead">O PoliSat desenvolve projetos aeroespaciais, forma estudantes e aproxima a universidade da sociedade.</p>
+        <p class="eyebrow">Rumo à CubeDesign 2026 · Buenos Aires, Argentina</p>
+        <h1 id="page-title">Nosso satélite <span>vai para a Argentina.</span></h1>
+        <p class="page-lead">O PoliSat, equipe de satélites da Poli-USP, vai competir na CubeDesign 2026, a competição latino-americana de pequenos satélites.</p>
+        <div class="countdown" data-countdown data-deadline="2026-11-24T00:00:00-03:00" data-ended-text="A competição começou! Torça pelo PoliSat." role="timer" aria-live="off" aria-label="Tempo restante até a CubeDesign 2026">
+          <div class="countdown-unit"><strong data-countdown-days>--</strong><span>dias</span></div>
+          <div class="countdown-unit"><strong data-countdown-hours>--</strong><span>horas</span></div>
+          <div class="countdown-unit"><strong data-countdown-minutes>--</strong><span>min</span></div>
+          <div class="countdown-unit"><strong data-countdown-seconds>--</strong><span>seg</span></div>
+        </div>
+        <p class="countdown-note" data-countdown-note>24 de novembro de 2026 · horário de Buenos Aires</p>
+        <div class="hero-actions">
+          <a class="button" href="https://cubedesign.unsam.edu.ar/" target="_blank" rel="noopener noreferrer">Site da CubeDesign</a>
+          <a class="button button-secondary" href="https://www.instagram.com/polisat.usp/" target="_blank" rel="noopener noreferrer">Acompanhe no Instagram</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section section-light" id="cubedesign" aria-labelledby="cd-title">
+      <div class="wrap">
+        <div class="section-grid">
+          <div>
+            <p class="eyebrow">A competição</p>
+            <h2 id="cd-title">CubeDesign 2026</h2>
+          </div>
+          <p class="section-copy">Criada no INPE, a CubeDesign reúne universidades da América Latina para projetar, construir e testar pequenos satélites. Em 2026, a quinta edição sai do Brasil pela primeira vez e acontece na Universidad Nacional de San Martín (UNSAM), em Buenos Aires. É lá que o PoliSat vai colocar à prova o trabalho de todos os subsistemas do nosso CubeSat.</p>
+        </div>
+        <div class="cd-facts">
+          <div class="cd-fact"><span>Quando</span><strong>24 de novembro</strong><p>Início da nossa jornada na competição.</p></div>
+          <div class="cd-fact"><span>Onde</span><strong>Buenos Aires</strong><p>UNSAM · Campus Miguelete, Argentina.</p></div>
+          <div class="cd-fact"><span>Quem</span><strong>Equipe PoliSat</strong><p>Estudantes da Escola Politécnica da USP.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section section-dark" aria-labelledby="gallery-title">
+      <div class="wrap">
+        <p class="eyebrow">Missão Argentina</p>
+        <h2 id="gallery-title">Da Poli para a competição.</h2>
+        <div class="gallery">
+          <figure>
+            <svg class="gallery-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-labelledby="cubesat-t">
+  <title id="cubesat-t">Ilustração de um CubeSat com painéis solares abertos em órbita da Terra</title>
+  <defs>
+    <radialGradient id="cubesat-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#13408f" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#090b12" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cubesat-earth" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1d5bc4"/>
+      <stop offset="1" stop-color="#0b1a3d"/>
+    </linearGradient>
+    <pattern id="cubesat-cells" width="14" height="14" patternUnits="userSpaceOnUse">
+      <rect width="14" height="14" fill="#13408f"/>
+      <rect x="1" y="1" width="12" height="12" fill="#1a4fa8"/>
+    </pattern>
+  </defs>
+  <rect width="480" height="360" fill="#090b12"/>
+  <g fill="#f3f4f8">
+    <circle cx="38" cy="42" r="1.2"/><circle cx="120" cy="88" r=".9"/><circle cx="200" cy="30" r="1.4"/>
+    <circle cx="300" cy="66" r="1"/><circle cx="430" cy="38" r="1.3"/><circle cx="452" cy="140" r=".9"/>
+    <circle cx="70" cy="170" r="1"/><circle cx="24" cy="250" r="1.2"/><circle cx="398" cy="210" r="1"/>
+    <circle cx="160" cy="140" r=".8"/><circle cx="350" cy="120" r=".8"/>
+  </g>
+  <ellipse cx="240" cy="560" rx="420" ry="260" fill="url(#cubesat-earth)"/>
+  <ellipse cx="240" cy="560" rx="420" ry="260" fill="none" stroke="#a8c6f5" stroke-opacity=".5" stroke-width="2"/>
+  <path d="M-20 250 Q240 120 500 250" fill="none" stroke="#a8c6f5" stroke-opacity=".45" stroke-width="1.2" stroke-dasharray="4 7"/>
+  <circle cx="240" cy="160" r="130" fill="url(#cubesat-glow)"/>
+  <g transform="translate(240 160) rotate(-14)">
+    <g transform="translate(-150 -26)">
+      <rect width="96" height="52" fill="url(#cubesat-cells)" stroke="#a8c6f5" stroke-width="1.5"/>
+      <line x1="96" y1="26" x2="110" y2="26" stroke="#a8c6f5" stroke-width="2"/>
+    </g>
+    <g transform="translate(54 -26)">
+      <rect x="0" width="96" height="52" fill="url(#cubesat-cells)" stroke="#a8c6f5" stroke-width="1.5" transform="translate(0 0)"/>
+      <line x1="-14" y1="26" x2="0" y2="26" stroke="#a8c6f5" stroke-width="2"/>
+    </g>
+    <polygon points="-40,-30 0,-50 40,-30 0,-10" fill="#a8c6f5"/>
+    <polygon points="-40,-30 0,-10 0,46 -40,26" fill="#5f84c4"/>
+    <polygon points="40,-30 0,-10 0,46 40,26" fill="#2c5bab"/>
+    <g fill="none" stroke="#f3f4f8" stroke-opacity=".55" stroke-width="1">
+      <polygon points="-34,-21 -6,-7 -6,36 -34,22"/>
+      <polygon points="34,-21 6,-7 6,36 34,22"/>
+    </g>
+    <line x1="0" y1="-50" x2="0" y2="-82" stroke="#f3f4f8" stroke-width="1.5"/>
+    <circle cx="0" cy="-84" r="3" fill="#f3f4f8"/>
+  </g>
+  <text x="24" y="336" fill="#a8c6f5" font-family="DM Mono, monospace" font-size="12" letter-spacing="1.5">POLISAT · CUBESAT 1U</text>
+</svg>
+            <figcaption>Nosso CubeSat pronto para os testes</figcaption>
+          </figure>
+          <figure>
+            <svg class="gallery-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-labelledby="rota-t">
+  <title id="rota-t">Mapa estilizado com a rota de São Paulo até Buenos Aires</title>
+  <rect width="480" height="360" fill="#111a35"/>
+  <g stroke="#f3f4f8" stroke-opacity=".07">
+    <path d="M0 60H480M0 120H480M0 180H480M0 240H480M0 300H480"/>
+    <path d="M80 0V360M160 0V360M240 0V360M320 0V360M400 0V360"/>
+  </g>
+  <path d="M188 20 C250 18 330 40 370 70 C410 100 420 140 396 176 C372 212 330 226 300 248 C270 270 262 300 240 330 C226 348 214 356 204 360 L170 360 C176 330 182 300 178 270 C174 240 150 220 146 190 C142 150 156 110 160 70 C162 46 170 26 188 20 Z" fill="#19264a" stroke="#a8c6f5" stroke-opacity=".35" stroke-width="1.2"/>
+  <path d="M340 168 Q300 140 238 232" fill="none" stroke="#a8c6f5" stroke-width="2.2" stroke-dasharray="6 7" stroke-linecap="round"/>
+  <g transform="translate(290 176) rotate(-128)">
+    <polygon points="0,-9 5,6 0,3 -5,6" fill="#f3f4f8"/>
+  </g>
+  <circle cx="340" cy="168" r="14" fill="#13408f" fill-opacity=".45"/>
+  <circle cx="340" cy="168" r="6" fill="#a8c6f5"/>
+  <circle cx="238" cy="232" r="18" fill="#13408f" fill-opacity=".45"/>
+  <circle cx="238" cy="232" r="7" fill="#f3f4f8"/>
+  <g font-family="DM Mono, monospace" letter-spacing="1">
+    <text x="358" y="164" fill="#a8c6f5" font-size="13">SÃO PAULO</text>
+    <text x="358" y="182" fill="#adb3c5" font-size="10">POLI-USP</text>
+    <text x="96" y="262" fill="#f3f4f8" font-size="13">BUENOS AIRES</text>
+    <text x="96" y="280" fill="#adb3c5" font-size="10">UNSAM · SEDE 2026</text>
+    <text x="24" y="40" fill="#a8c6f5" font-size="12" letter-spacing="1.5">ROTA · CUBEDESIGN 2026</text>
+    <text x="24" y="336" fill="#adb3c5" font-size="10">≈ 1.700 KM</text>
+  </g>
+</svg>
+            <figcaption>São Paulo → Buenos Aires</figcaption>
+          </figure>
+          <figure>
+            <svg class="gallery-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-labelledby="patch-t">
+  <title id="patch-t">Patch da missão PoliSat na CubeDesign 2026</title>
+  <defs>
+    <path id="patch-top" d="M140 180 A100 100 0 0 1 340 180"/>
+    <path id="patch-bottom" d="M128 180 A112 112 0 0 0 352 180"/>
+  </defs>
+  <rect width="480" height="360" fill="#f3f4f8"/>
+  <circle cx="240" cy="180" r="138" fill="#090b12"/>
+  <circle cx="240" cy="180" r="130" fill="none" stroke="#a8c6f5" stroke-width="2"/>
+  <circle cx="240" cy="180" r="84" fill="#13408f"/>
+  <path d="M156 200 Q240 150 324 200" fill="none" stroke="#a8c6f5" stroke-width="1.5" stroke-dasharray="3 5"/>
+  <g fill="#f3f4f8">
+    <circle cx="198" cy="132" r="1.4"/><circle cx="286" cy="128" r="1.2"/><circle cx="300" cy="226" r="1.1"/><circle cx="182" cy="230" r="1.1"/>
+  </g>
+  <g transform="translate(240 176) scale(.62)">
+    <polygon points="-38,-26 0,-46 38,-26 0,-6" fill="#a8c6f5"/>
+    <polygon points="-38,-26 0,-6 0,46 -38,26" fill="#f3f4f8"/>
+    <polygon points="38,-26 0,-6 0,46 38,26" fill="#a8c6f5" fill-opacity=".7"/>
+    <rect x="-112" y="-14" width="62" height="30" fill="#a8c6f5" fill-opacity=".85"/>
+    <rect x="50" y="-14" width="62" height="30" fill="#a8c6f5" fill-opacity=".85"/>
+  </g>
+  <g fill="#f3f4f8" font-family="DM Mono, monospace" font-size="15" letter-spacing="4" text-anchor="middle">
+    <text><textPath href="#patch-top" startOffset="50%">POLISAT · POLI-USP</textPath></text>
+  </g>
+  <g fill="#a8c6f5" font-family="DM Mono, monospace" font-size="13" letter-spacing="3" text-anchor="middle">
+    <text dy="10"><textPath href="#patch-bottom" startOffset="50%">CUBEDESIGN 2026 · ARGENTINA</textPath></text>
+  </g>
+  <g fill="#a8c6f5">
+    <polygon points="240,40 243,48 251,48 245,53 247,61 240,56 233,61 235,53 229,48 237,48"/>
+  </g>
+</svg>
+            <figcaption>Patch da missão CubeDesign 2026</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -54,23 +249,18 @@
       <div class="wrap">
         <p class="eyebrow">Explore o PoliSat</p>
         <h2 id="routes-title">Conheça cada frente do grupo.</h2>
-        <a class="route-link" href="../processo-seletivo/">
-          <span class="route-number">01 / PARTICIPE</span>
-          <span class="route-copy"><strong class="route-name">Processo Seletivo</strong><span class="route-note">Inscrições até 18/10/2026</span></span>
-          <span class="route-arrow" aria-hidden="true">↗</span>
-        </a>
         <a class="route-link" href="../projeto/">
-          <span class="route-number">02 / GRUPO</span>
+          <span class="route-number">01 / GRUPO</span>
           <span class="route-copy"><strong class="route-name">Projeto</strong><span class="route-note">Conheça o PoliSat</span></span>
           <span class="route-arrow" aria-hidden="true">↗</span>
         </a>
         <a class="route-link" href="../sistemas/">
-          <span class="route-number">03 / ENGENHARIA</span>
+          <span class="route-number">02 / ENGENHARIA</span>
           <span class="route-copy"><strong class="route-name">Sistemas</strong><span class="route-note">Explore os subsistemas do satélite</span></span>
           <span class="route-arrow" aria-hidden="true">↗</span>
         </a>
         <a class="route-link" href="../missoes/">
-          <span class="route-number">04 / TRAJETÓRIA</span>
+          <span class="route-number">03 / TRAJETÓRIA</span>
           <span class="route-copy"><strong class="route-name">Missões</strong><span class="route-note">Veja projetos e conquistas</span></span>
           <span class="route-arrow" aria-hidden="true">↗</span>
         </a>
@@ -82,12 +272,12 @@
     <div class="wrap footer-inner">
       <a class="brand" href="./"><img class="footer-brand-logo" src="../assets/polisat-logo.svg" alt="PoliSat"></a>
       <div class="footer-links">
-        <a href="../processo-seletivo/">Processo Seletivo</a>
+        <a href="#cubedesign">CubeDesign 2026</a>
         <a href="https://www.instagram.com/polisat.usp/" target="_blank" rel="noopener noreferrer">Instagram</a>
         <a href="https://www.linkedin.com/company/polisat-usp/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </div>
     </div>
   </footer>
-  <script src="../script.js?v=2" defer></script>
+  <script src="../script.js?v=3" defer></script>
 </body>
 </html>

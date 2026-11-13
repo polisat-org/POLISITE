@@ -16,19 +16,19 @@ primaryNav.addEventListener("click", (event) => {
   }
 });
 
-const selectionCountdown = document.querySelector("[data-countdown]");
+const eventCountdown = document.querySelector("[data-countdown]");
 
-if (selectionCountdown) {
-  const deadline = Date.parse(selectionCountdown.dataset.deadline);
+if (eventCountdown) {
+  const deadline = Date.parse(eventCountdown.dataset.deadline);
   const countdownParts = [
-    [selectionCountdown.querySelector("[data-countdown-days]"), 86400000],
-    [selectionCountdown.querySelector("[data-countdown-hours]"), 3600000],
-    [selectionCountdown.querySelector("[data-countdown-minutes]"), 60000],
-    [selectionCountdown.querySelector("[data-countdown-seconds]"), 1000]
+    [eventCountdown.querySelector("[data-countdown-days]"), 86400000],
+    [eventCountdown.querySelector("[data-countdown-hours]"), 3600000],
+    [eventCountdown.querySelector("[data-countdown-minutes]"), 60000],
+    [eventCountdown.querySelector("[data-countdown-seconds]"), 1000]
   ];
   const countdownNote = document.querySelector("[data-countdown-note]");
 
-  const updateSelectionCountdown = () => {
+  const updateEventCountdown = () => {
     let remaining = Math.max(0, deadline - Date.now());
 
     for (const [element, duration] of countdownParts) {
@@ -38,12 +38,13 @@ if (selectionCountdown) {
     }
 
     if (deadline <= Date.now()) {
-      countdownNote.textContent = "Inscrições encerradas";
-      selectionCountdown.setAttribute("aria-label", "Inscrições encerradas");
+      const endedText = eventCountdown.dataset.endedText || "Contagem encerrada";
+      if (countdownNote) countdownNote.textContent = endedText;
+      eventCountdown.setAttribute("aria-label", endedText);
       window.clearInterval(countdownInterval);
     }
   };
 
-  const countdownInterval = window.setInterval(updateSelectionCountdown, 1000);
-  updateSelectionCountdown();
+  const countdownInterval = window.setInterval(updateEventCountdown, 1000);
+  updateEventCountdown();
 }
